@@ -4,6 +4,8 @@
 
 A startup called Sparkify wants to analyze the data they've been collecting on songs and user activity on their new music streaming app. The analytics team is particularly interested in understanding what songs users are listening to. Currently, they don't have an easy way to query their data, which resides in a directory of JSON logs on user activity on the app, as well as a directory with JSON metadata on the songs in their app.
 
+![Sparkify Database Schema!](data-model-cut.png)
+
 ## STAR SCHEMA
 
 This is the simplest way to structure tables in a database. As can be seen above the structure looks like a star. This is a combination of a central fact tables surrounded by related dimension tables. 
