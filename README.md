@@ -18,7 +18,7 @@ Also we have the sql_queries file which contains all the sql queries for creatio
 Lastly, the create_tables.py is used to create the database, drop and create tables depending on existence and close the connection to database.
 
 To run script:
-> Make sure to run create_tables.py first to create database.
-> Next, run etl.py.
+1. Make sure to run create_tables.py first to create database.
+2. Next, run etl.py.
 Hopefully everything goes well
-> Finally run each cell in test.ipynb to make sure the tables are created with data inserted.
+3. Finally run each cell in test.ipynb to make sure the tables are created with data inserted.
