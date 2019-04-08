@@ -49,7 +49,7 @@ def process_log_file(cur, filepath):
     df = df[df.page == 'NextSong']
 
     # convert timestamp column to datetime
-    df['ts'] = pd.to_datetime(df['ts'], unit='ms') 
+    df['ts'] = pd.to_datetime(df['ts'], unit='ms')
     
     # insert time data records
     time_data = []
@@ -65,15 +65,13 @@ def process_log_file(cur, filepath):
                 'month', 'year', 'weekday']
     dict_data = dict(zip(column_labels, time_data))
     time_df = pd.DataFrame(dict_data)
-    time_df.drop_duplicates(inplace=True)
 
     for i, row in time_df.iterrows():
         cur.execute(time_table_insert, list(row))
 
     # load user table
     user_df = data[['userId', 'firstName', 'lastName', 'gender', 'level']]
-    user_df.drop_duplicates(inplace=True)
-    user_df['userId'] = pd.to_numeric(user_df.userId)
+    user_df = user_df.copy()
     user_df.dropna(inplace=True)
 
     # insert user records
